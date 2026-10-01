@@ -1,20 +1,27 @@
-<!---
-
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
-
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
-
 ## How it works
 
-Explain how your project works
+This project is a purely combinational circuit built with logic gates (NOT, AND, OR, XOR and buffer). Two inputs, P (ui[0]) and Q (ui[1]), select one of four letters that is shown on a 7-segment display connected to uo[0] to uo[6] (segments a to g).
+
+| Letter | P (ui[0]) | Q (ui[1]) |
+|--------|-----------|-----------|
+| D      | 0 | 0 |
+| A      | 0 | 1 |
+| n      | 1 | 0 |
+| Y      | 1 | 1 |
+
+Each segment is a Boolean function of P and Q:
+
+- a = P'Q
+- b = P' + Q
+- c = g = 1 (always on)
+- d = (P xor Q)'
+- e = (PQ)'
+- f = Q
 
 ## How to test
 
-Explain how to use your project
+Connect a common-cathode 7-segment display to uo[0] to uo[6] (segments a to g). Set ui[0] and ui[1] to the code of the letter you want, using the table above, and the display shows that letter.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+A common-cathode 7-segment display on uo[0] to uo[6] (the Tiny Tapeout demo board already has one).
